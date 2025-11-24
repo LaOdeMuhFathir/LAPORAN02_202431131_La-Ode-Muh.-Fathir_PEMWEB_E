@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAPORAN 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>LAPORAN PRAKTIKUM</h1>
+        <hr>
+        <h2>La Ode Muh. Fathir | 202431131</h2>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="section-item">
+                <h3 onclick="toggleContent(this)"> A. Mengapa menggunakan CSS dan JavaScript dalam pemrograman web modern? </h3>
+                <div class="content-section">
+                    <div class="container-gambar">
+                        <img src="Gambar tes.avif" alt="Gambra Laporan Praktikum" width="180" sizes="180">
+                    </div>
+                    <p>Karena keduanya membuat sebuah website tidak hanya berfungsi secara struktural, tetapi juga menarik secara visual dan mampu memberikan pengalaman interaktif kepada <i>user</i>.</p>
+                    <ul>
+                        <li>Dengan bantuan <STrong> CSS</STrong>, tampilan halaman web dapat diatur agar lebih rapi, estetis, dan responsif.</li>
+                        <li> Sedangkan, <STrong> JavaScript</STrong> memungkinkan halaman web menjadi dinamis dan interaktif, sehingga pengguna dapat berinteraksi dengan elemen-elemen yang ada tanpa harus memuat ulang halaman.</li>
+                    </ul>
+                    <p>Tentunya dengan kolaborasi keduanya dapat mendukung terciptanya sebuah website modern yang cepat, interaktif, dan  <i>user-friendly</i>. </p>
+                </div>
+            </div>
+
+            <div class="section-item">
+                <h3 onclick="toggleContent(this)"> B. Jelaskan konsep dan tujuan utama dari Responsive Web Design (RWD)!</h3>
+                <div class="content-section">
+                    <div class="container-gambar"><img src="rwd.jpg" alt="Gambar RWD" width="200" sizes="200"></div>
+                    <p>Konsep <i>Responsive Web Design</i> <STrong>(RWD)</STrong> adalah membuat tampilan website yang mampu menyesuaikan diri secara otomatis dengan berbagai ukuran layar dan perangkat.  menggunakan prinsip layout yang fleksibel, ukuran elemen yang proporsional, gambar yang dapat menyesuaikan ukuran layar, serta media queries pada CSS untuk mengatur tampilan berdasarkan resolusi perangkat. Dengan konsep ini, satu desain website dapat bekerja baik di smartphone, tablet, hingga desktop tanpa perlu membuat versi terpisah untuk masing-masing perangkat.</p>
+                    
+                    <p>Tujuan utama dari <strong>RWD</strong> meliputi:</p>
+                    <ul>
+                        <li>Membuat tampilan website menyesuaikan semua ukuran layar.</li>
+                        <li>Memberikan pengalaman pengguna yang nyaman di berbagai perangkat.</li>
+                        <li>Menghindari pembuatan banyak versi website.</li>
+                        <li>Mendukung SEO dengan tampilan yang mobile-friendly.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-itemb">
+                <h3 onclick="toggleContent(this)"> C. Bagaimana kombinasi CSS, JavaScript, dan prinsip RWD dapat menghasilkan tampilan web yang interaktif sekaligus adaptif? Jelaskan bagaimana ketiganya saling melengkapi!</h3>
+                <div class="content-section">
+                    <div class="container-gambar"><img src="kombinasi.jpg" alt="Gambar RWD" width="200" sizes="200"></div>
+                    <p>Kombinasi antara <strong> CSS, JavaScript,</strong> dan prinsip <strong> <i>Responsive Web Design</i> (RWD)</strong> mampu menghasilkan tampilan web yang interaktif sekaligus adaptif karena ketiganya memiliki peran yang saling melengkapi.</p>
+                    <ul>
+                        <li>CSS berfungsi untuk mengatur tampilan visual, seperti warna, layout, ukuran elemen, serta gaya responsif menggunakan media queries. Melalui CSS, sebuah halaman web dapat menyesuaikan diri dengan berbagai ukuran layar.</li>
+                        <li>JavaScript berperan memberikan interaktivitas serta logika dinamis pada website. Dengan JavaScript, elemen-elemen di halaman web dapat merespons tindakan pengguna, seperti klik, scroll, input form, atau animasi.</li>
+                        <li>prinsip Responsive Web Design (RWD) menjadi landasan yang memastikan situs web tetap fungsional di semua perangkat dengan menggabungkan tata letak yang fleksibel, gambar responsif, dan media queries. RWD memberikan struktur adaptif yang kemudian diperindah oleh CSS dan diperkuat dengan interaktivitas JavaScript.</li>
+                    </ul>
+                    <p>Secara keseluruhan, CSS memastikan pengaturan tampilan , tampilan RWD dapat beradaptasi , dan JavaScript menghadirkan interaksi yang dinamis . Ketiganya bekerja sama untuk menciptakan website modern yang tidak hanya menarik dan interaktif, tetapi juga nyaman digunakan pada perangkat apa pun.</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="mode-switch-container">
+            <button id="mode-switch">Mode Berantakan</button>
+        </div>
+    </div>
+
+    <script>
+    
+        function toggleContent(h3Element) {
+            const content = h3Element.nextElementSibling;
+            if(!content || !content.classList.contains('content-section')) {
+                return;
+            }
+
+            const isHidden = content.classList.contains('hidden');
+            let message = isHidden 
+                ? "Konten sedang tersembunyi. Apakah Anda ingin MENAMPILKANNYA?"
+                : "Konten sedang ditampilkan. Apakah Anda ingin MENYEMBUNYIKANNYA?";
+
+            if (confirm(message)) {
+                if (!isHidden) {
+                    content.classList.add('hidden');
+                } else {
+                    content.classList.remove('hidden');
+                }
+            }
+        }
+
+        // Fungsi untuk mengganti mode tampilan (Mode Rapi <-> Mode Berantakan)
+        const modeSwitch = document.getElementById('mode-switch');
+        const body = document.body;
+
+        modeSwitch.addEventListener('click', () => {
+            body.classList.toggle('berantakan');
+
+            if (body.classList.contains('berantakan')) {
+                modeSwitch.textContent = 'Mode Rapi';
+            } else {
+                modeSwitch.textContent = 'Mode Berantakan';
+            }
+        });
+    </script>
+
+</body>
+</html>
+

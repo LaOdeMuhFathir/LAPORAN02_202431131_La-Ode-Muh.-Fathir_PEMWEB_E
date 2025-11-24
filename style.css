@@ -1,0 +1,218 @@
+/* Variabel CSS untuk Mode */
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --primary-color: #e0e7de;
+    --secondary-color: #6c757d;
+    --padding-base: 15px;
+    --border-radius-base: 8px;
+    --font-family: 'Helvetica Neue', Arial, sans-serif;
+    --text-size-base: 1rem;
+    --transition-speed: 0.3s;
+}
+
+/* --- Mode Berantakan Styles --- */
+.berantakan {
+    --bg-color: #ffcccc; 
+    --text-color: #00ff00; 
+    --primary-color: #e0fd03; 
+    --font-family: 'Comic Sans MS', cursive, sans-serif; 
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.berantakan h1, .berantakan h2, .berantakan h3 {
+    color: var(--primary-color) !important;
+    text-align: right;
+    border: 5px dashed var(--secondary-color);
+    padding: 5px;
+    -webkit-text-fill-color: #333;
+}
+
+.berantakan .content-section {
+    padding: 25px 60px 10px 3px; 
+    margin: 10px;
+    transform: rotate(2deg); /
+}
+
+.berantakan p {
+    font-size: 1.5rem !important; 
+    line-height: 0.8;
+    margin-bottom: 30px;
+}
+
+.berantakan #mode-switch {
+    font-size: 2rem;
+    padding: 20px;
+}
+
+
+/* --- Mode Rapi Styles (Default) --- */
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: rgb(54, 50, 50);
+    padding: var(--padding-base) 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    text-align: center;
+    font-family: 'Arial Black', Gadget, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 var(--padding-base);
+}
+
+/* Menggunakan Flexbox untuk Tata Letak Utama (Mode Rapi) */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+/* Elemen Subbagian */
+h3 {
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: var(--padding-base);
+    border-radius: var(--border-radius-base);
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    transition: background-color var(--transition-speed); 
+}
+
+h3:hover {
+    background-color: #5a6268;
+}
+
+/* Konten Jawaban */
+.content-section {
+    background-color: white;
+    padding: var(--padding-base) 20px;
+    border-radius: var(--border-radius-base);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: max-height var(--transition-speed) ease-out, opacity var(--transition-speed) ease-out;
+    overflow: hidden;
+    opacity: 1;
+    text-align: justify;
+}
+
+.container-gambar {
+    text-align: center;
+}
+
+.hidden {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+    margin-bottom: 0;
+    min-height: 0; 
+}
+
+/* Tombol Mode */
+#mode-switch-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#mode-switch {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-base);
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+#mode-switch:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+
+/* Layar Desktop (≥1024px)  */
+@media (min-width: 1024px) {
+    .main-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .section-item {
+        width: calc(50% - 10px); 
+    }
+   
+    .section-c {
+        width: 100%; 
+        
+        margin-left: auto;
+        margin-right: auto;
+        
+        max-width: 800px; 
+    }
+}
+
+/* Layar Tablet (600–1023px)  */
+@media (min-width: 600px) and (max-width: 1023px) {
+    .section-item {
+        width: 100%;
+    }
+    body {
+        font-size: 1.1rem; 
+    }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.3rem; }
+    h3 { font-size: 1.15rem; }
+}
+
+/* Layar Smartphone (≤599px) */
+@media (max-width: 599px) {
+    .section-item {
+        width: 100%;
+    }
+    body {
+        font-size: 1.2rem;
+    }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.2rem; }
+    h3 {
+        font-size: 1.25rem;
+        padding: 20px; 
+    }
+    #mode-switch {
+        padding: 15px 30px; 
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    .content-section {
+        padding: var(--padding-base);
+    }
+}
