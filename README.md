@@ -4,8 +4,8 @@ Repositori ini berisi hasil pembuatan halaman web interaktif menggunakan HTML, C
 
 1. Struktur Dasar Halaman
    Buat satu file HTML dengan struktur sebagai berikut:
-   a. Judul utama (<h1>) → bertuliskan LAPORAN PRAKTIKUM
-   b. Subjudul (<h2>) → berisi Nama | NIM
+   a. Judul utama (<h1>) bertuliskan LAPORAN PRAKTIKUM
+   b. Subjudul (<h2>) berisi Nama | NIM
    c. Tambahkan beberapa subbagian (<h3>) yang masing-masing berisi jawaban dari soal: 
       1.) Mengapa menggunakan CSS dan JavaScript dalam pemrograman web modern?
       2.) Jelaskan konsep dan tujuan utama dari Responsive Web Design (RWD)!
